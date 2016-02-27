@@ -9,10 +9,10 @@ This repo implements a simple server to list and filter a number of houses based
 - [go.geojson](https://github.com/paulmach/go.geojson) for recordign result.
 
 ## File description
-- server.go includes the logic to setup the server.
-- list_handler.go includes the logic to process listing requests from user.
-- db/listing_details.go specifies the schema of data stored in mongodb.
-- db/listing_details_accessor.go includes the logic to access and filter data from mongodb.
+- **server.go** includes the logic to setup the server.
+- **list_handler.go** includes the logic to process listing requests from user.
+- **db/listing_details.go** specifies the schema of data stored in mongodb.
+- **db/listing_details_accessor.go** includes the logic to access and filter data from mongodb.
 
 ## How to run from scratch
 ### 1. Set up [mongodb](https://docs.mongodb.org/manual/installation/)
@@ -56,14 +56,15 @@ The server supports a single api with different params.
 /listings
 ```
 ### Input query params:
-- min_price, the minimal price to filter based on. 
-- max_price, the maximal price to filter based on. 
-- min_bed, the minimal number of bedrooms to filter based on. 
-- max_bed, the maximal number of bedrooms to filter based on. 
-- min_bath, the minimal number of bathrooms to filter based on.
-- max_bath, the maximal number of bathrooms to filter based on.
-- num_docs, the maximal number of record to be returned.
-- start_id, the minimal id of the record to start the search with. The id of the returned records should be greater or equal to it.
+- **min_price**, the minimal price to filter based on. 
+- **max_price**, the maximal price to filter based on. 
+- **min_bed**, the minimal number of bedrooms to filter based on. 
+- **max_bed**, the maximal number of bedrooms to filter based on. 
+- **min_bath**, the minimal number of bathrooms to filter based on.
+- **max_bath**, the maximal number of bathrooms to filter based on.
+- **num_docs**, the maximal number of record to be returned.
+- **start_id**, the minimal id of the record to start the search with. The id of the returned records should be greater or equal to it.
+
 E.g. The following request retrieves 10 listings with price being equal or higher than 115254, starting from the record with id being 1001.
 ```
 /listings?min_price=115254&num_docs=10&start_id=1001
