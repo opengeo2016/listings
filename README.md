@@ -65,6 +65,7 @@ The server supports a single api with different params.
 - **num_docs**, the maximal number of record to be returned.
 - **start_id**, the minimal id of the record to start the search with. The id of the returned records should be greater or equal to it.
 
+
 E.g. The following request retrieves 10 listings with price being equal or higher than 115254, starting from the record with id being 1001.
 ```
 /listings?min_price=115254&num_docs=10&start_id=1001
